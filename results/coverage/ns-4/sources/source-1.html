@@ -1,0 +1,222 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SourceLesson7Kt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">lesson7</a>
+</div>
+
+<h1>Coverage Summary for Class: SourceLesson7Kt (lesson7)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+<th class="coverageStat 
+">
+  Instruction, %
+</th>
+</tr>
+<tr>
+  <td class="name">SourceLesson7Kt</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (12/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92,3%
+  </span>
+  <span class="absValue">
+    (12/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87,4%
+  </span>
+  <span class="absValue">
+    (166/190)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SourceLesson7Kt$sibilants$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+    <td class="coverageStat"/>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (21/21)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (12/16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92,9%
+  </span>
+  <span class="absValue">
+    (13/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88,6%
+  </span>
+  <span class="absValue">
+    (187/211)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package lesson7
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.io.File
+<i class="no-highlight">4</i>&nbsp;
+<i class="no-highlight">5</i>&nbsp;//t7 from https://github.com/vitaya-para/KotlinAsFirst2021
+<i class="no-highlight">6</i>&nbsp;
+<i class="no-highlight">7</i>&nbsp;/**
+<i class="no-highlight">8</i>&nbsp; * Средняя (12 баллов)
+<i class="no-highlight">9</i>&nbsp; *
+<i class="no-highlight">10</i>&nbsp; * В русском языке, как правило, после букв Ж, Ч, Ш, Щ пишется �?, А, У, а не Ы, Я, Ю.
+<i class="no-highlight">11</i>&nbsp; * Во входном файле с именем inputName содержится некоторый текст на русском языке.
+<i class="no-highlight">12</i>&nbsp; * Проверить текст во входном файле на соблюдение данного правила и вывести в выходной
+<i class="no-highlight">13</i>&nbsp; * файл outputName текст с исправленными ошибками.
+<i class="no-highlight">14</i>&nbsp; *
+<i class="no-highlight">15</i>&nbsp; * Регистр заменённых букв следует сохранять.
+<i class="no-highlight">16</i>&nbsp; *
+<i class="no-highlight">17</i>&nbsp; * �?сключения (жюри, брошюра, парашют) в рамках данного задания обрабатывать не нужно
+<i class="no-highlight">18</i>&nbsp; *
+<i class="no-highlight">19</i>&nbsp; */
+<i class="no-highlight">20</i>&nbsp;private fun String.syncCase(oldLine: String): String {
+<b class="fc"><i class="no-highlight">21</i>&nbsp;    val outLine = this.toMutableList()</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;    for (i in this.indices)</b>
+<b class="pc"><i class="no-highlight">23</i>&nbsp;        if (oldLine[i].isUpperCase() &amp;&amp; this[i].isLowerCase() || oldLine[i].isLowerCase() &amp;&amp; this[i].isUpperCase())</b>
+<b class="pc"><i class="no-highlight">24</i>&nbsp;            if (oldLine[i].isUpperCase())</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;                outLine[i] = outLine[i].uppercase()[0]</b>
+<i class="no-highlight">26</i>&nbsp;            else
+<b class="nc"><i class="no-highlight">27</i>&nbsp;                outLine[i] = outLine[i].lowercase()[0]</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;    return outLine.joinToString(&quot;&quot;)</b>
+<i class="no-highlight">29</i>&nbsp;}
+<i class="no-highlight">30</i>&nbsp;
+<i class="no-highlight">31</i>&nbsp;fun sibilants(inputName: String, outputName: String) {
+<b class="pc"><i class="no-highlight">32</i>&nbsp;    val writer = File(outputName).bufferedWriter()</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;    for (line in File(inputName).readLines()) {</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;        writer.appendLine(</b>
+<b class="fc"><i class="no-highlight">35</i>&nbsp;            line.lowercase().replace(Regex(&quot;&quot;&quot;[жчшщ][ыяю]&quot;&quot;&quot;), transform = {</b>
+<b class="fc"><i class="no-highlight">36</i>&nbsp;                it.value.replace(&#39;ы&#39;, &#39;и&#39;).replace(&#39;я&#39;, &#39;а&#39;).replace(&#39;ю&#39;, &#39;у&#39;)</b>
+<i class="no-highlight">37</i>&nbsp;            })
+<b class="fc"><i class="no-highlight">38</i>&nbsp;                .syncCase(line)</b>
+<i class="no-highlight">39</i>&nbsp;        )
+<i class="no-highlight">40</i>&nbsp;    }
+<b class="fc"><i class="no-highlight">41</i>&nbsp;    writer.close()</b>
+<i class="no-highlight">42</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-03-27 19:36</div>
+</div>
+</body>
+</html>
