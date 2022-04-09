@@ -6,14 +6,14 @@ plugins {
     application
 }
 
-group = "me.alexey"
-version = "1.0-SNAPSHOT"
+group = "com.testing"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation ("com.code-intelligence:jazzer-api:0.10.0")
     testImplementation(kotlin("test"))
 }
 
@@ -32,4 +32,16 @@ tasks.test {
 tasks.koverMergedHtmlReport {
     isEnabled = true                        // false to disable report generation
     htmlReportDir.set(layout.projectDirectory.dir("results/coverage"))
+}
+
+val jar by tasks.getting(Jar::class) {
+    manifest {
+        attributes["Main-Class"] = ""
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    configurations.compileClasspath.get().forEach {
+        from(if (it.isDirectory) it else zipTree(it))
+    }
 }
