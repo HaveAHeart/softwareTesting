@@ -196,4 +196,7 @@ INFO: A corpus is not provided, starting from an empty corpus
 #942395 REDUCE cov: 130 ft: 392 corp: 50/719b lim: 4096 exec/s: 314131 rss: 862Mb L: 56/88 MS: 1 EraseBytes-
 #981392 REDUCE cov: 130 ft: 392 corp: 50/718b lim: 4096 exec/s: 327130 rss: 862Mb L: 55/88 MS: 2 CopyPart-EraseBytes-
 #1000000        DONE   cov: 130 ft: 392 corp: 50/718b lim: 4096 exec/s: 333333 rss: 862Mb
+###### Recommended dictionary. ######
+"\x01\x00\x00\x00\x00\x00\x00\x00" # Uses: 82604
+###### End of recommended dictionary. ######
 Done 1000000 runs in 3 second(s)
